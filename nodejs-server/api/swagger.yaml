@@ -1,0 +1,41 @@
+---
+swagger: "2.0"
+info:
+  description: "The APIs to test the vehicle models"
+  version: "1.0.1"
+  title: "Uttam-Car-API"
+host: "virtserver.swaggerhub.com"
+basePath: "/surja/Uttam-Car-API/1.0.1"
+schemes:
+- "https"
+paths:
+  /vehicle:
+    get:
+      tags:
+      - "Vehicle"
+      description: "Returns All vehicles"
+      operationId: "vehicleGET"
+      parameters: []
+      responses:
+        200:
+          description: "Successful response"
+          schema: {}
+      x-swagger-router-controller: "Vehicle"
+  /vehicles/{id}/data_request/drive_state:
+    get:
+      tags:
+      - "Vehicle"
+      description: "Returns the driving state of the vehicle"
+      operationId: "drive_state"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "The ID number of the vehicle"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK"
+          schema: {}
+      x-swagger-router-controller: "Vehicle"
+definitions: {}
